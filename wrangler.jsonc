@@ -23,5 +23,10 @@
       "binding": "kv",
       "id": "ba80ce4defb64d5f81802922d1cc127c"
     }
-  ]
+  ],
+  "vars": {
+    "domain": ["yumo.qzz.io"],
+    "admin": "admin@yumo.qzz.io",
+    "jwt_secret": "Cm-245687139"
+  }
 }
