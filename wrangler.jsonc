@@ -10,5 +10,18 @@
   },
   "compatibility_flags": [
     "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "db",
+      "database_name": "email",
+      "database_id": "08ea2af1-3f03-4da9-bfde-0abd56df2e2f"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "kv",
+      "id": "ba80ce4defb64d5f81802922d1cc127c"
+    }
   ]
 }
