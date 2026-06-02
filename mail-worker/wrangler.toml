@@ -29,8 +29,8 @@ crons = ["*/30 * * * *", "0 16 * * *"]
 #ai_model = ""
 #analysis_cache = false
 #orm_log = false
-#domain = []
-#admin = ""
-#jwt_secret = ""
+#domain = ["yumo.qzz.io"]
+#admin = "admin@yumo.qzz.io"
+#jwt_secret = "Cm-245687139"
 [build]
 command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
