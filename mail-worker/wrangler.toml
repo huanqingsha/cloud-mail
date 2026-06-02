@@ -1,46 +1,32 @@
-name = "cloud-mail"
-main = "src/index.js"
-compatibility_date = "2025-06-04"
-keep_vars = true
-
-[observability]
-enabled = true
-
-[[d1_databases]]
-binding = "db"
-database_name = "email"
-database_id = "08ea2af1-3f03-4da9-bfde-0abd56df2e2f"
-
-[[kv_namespaces]]
-binding = "kv"
-id = "ba80ce4defb64d5f81802922d1cc127c"
-
-#[[r2_buckets]]
-#binding = "r2"
-#bucket_name = ""
-
-#[[send_email]]
-#name = "email"
-
-[ai]
-binding = "ai"
-
-[assets]
-binding = "assets"
-directory = "./dist"
-not_found_handling = "single-page-application"
-run_worker_first = true
-
-[triggers]
-crons = ["*/30 * * * *", "0 16 * * *"]
-
-[vars]
-#ai_model = ""
-#analysis_cache = false
-#orm_log = false
-#domain = ["yumo.qzz.io"]
-#admin = "admin@yumo.qzz.io"
-#jwt_secret = "Cm-245687139"
-
-[build]
-command = "pnpm --prefix ../mail-vue install && pnpm --prefix ../mail-vue run build"
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cloud-mail",
+  "compatibility_date": "2026-05-31",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "directory": "mail-worker/dist"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "d1_databases": [
+    {
+      "binding": "db",
+      "database_name": "email",
+      "database_id": "08ea2af1-3f03-4da9-bfde-0abd56df2e2f"
+    }
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "kv",
+      "id": "ba80ce4defb64d5f81802922d1cc127c"
+    }
+  ],
+  "vars": {
+    "domain": ["yumo.qzz.io"],
+    "admin": "admin@yumo.qzz.io",
+    "jwt_secret": "Cm-245687139"
+  }
+}
